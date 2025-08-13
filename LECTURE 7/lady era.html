@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lady Era's Site</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg: #fff9fc;
+      --text: #333;
+      --header-bg: #ff69b4;
+      --footer-bg: #222;
+    }
+    body.dark {
+      --bg: #121212;
+      --text: #f0f0f0;
+      --header-bg: #880e4f;
+      --footer-bg: #000;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background-color: var(--header-bg);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer {
+      background: var(--footer-bg);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    .dark-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 16px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    input, textarea {
+      padding: 10px;
+      width: 100%;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button.submit {
+      background: #ff69b4;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .quote-box {
+      margin-top: 30px;
+      font-style: italic;
+      font-size: 1.3em;
+      padding: 20px;
+      border-left: 5px solid #ff69b4;
+      background-color: rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <button class="dark-toggle" onclick="document.body.classList.toggle('dark')">Toggle Dark Mode</button>
+
+  <header>
+    <h1>Welcome to Lady Era's Website</h1>
+    <p>Built with 💜 on GitHub Pages</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <p>This is my first website hosted for free using GitHub Pages. Stay tuned for more!</p>
+    </section>
+
+    <section>
+      <h2>Motivational Quote</h2>
+      <div class="quote-box" id="quoteBox">
+        "Push yourself, because no one else is going to do it for you."
+      </div>
+    </section>
+
+    <section>
+      <h2>My Projects</h2>
+      <div class="portfolio">
+        <div class="card">
+          <h3>Project One</h3>
+          <p>A beautiful landing page design using HTML & CSS.</p>
+        </div>
+        <div class="card">
+          <h3>Project Two</h3>
+          <p>Responsive portfolio website hosted on GitHub Pages.</p>
+        </div>
+        <div class="card">
+          <h3>Project Three</h3>
+          <p>Interactive contact form with Formspree integration.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact Me</h2>
+      <form action="#" method="POST">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button class="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Lady Era. All rights reserved.
+  </footer>
+
+  <script>
+    const quotes = [
+      "Push yourself, because no one else is going to do it for you.",
+      "Success doesn’t just find you. You have to go out and get it.",
+      "Great things never come from comfort zones.",
+      "Dream it. Wish it. Do it.",
+      "Don't stop when you're tired. Stop when you're done.",
+      "Sometimes we’re tested not to show our weaknesses, but to discover our strengths.",
+      "The harder you work for something, the greater you’ll feel when you achieve it.",
+      "Don’t limit your challenges. Challenge your limits."
+    ];
+    const quoteBox = document.getElementById("quoteBox");
+    setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      quoteBox.textContent = quotes[randomIndex];
+    }, 5000);
+  </script>
+</body>
+</html>
+
+
+
+
