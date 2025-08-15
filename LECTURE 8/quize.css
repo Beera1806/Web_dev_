@@ -1,0 +1,6 @@
+form {
+  display: flex;
+  flex-direction: column; /* stack elements vertically */
+  gap: 10px; /* space between items */
+  width: 200px;
+}
